@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Beginner's Lab</title>
+    <link rel="stylesheet" href="css/admin_style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <aside class="sidebar">
+            <h2>Admin Menu</h2>
+            <nav>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#manage-email-tips">Manage Email Tips</a></li>
+                    <li><a href="#manage-sop-tips">Manage SOP Tips</a></li>
+                    <li><a href="#view-queries">View Student Queries</a></li>
+                    <li><a href="#update-website-info">Update Website Info</a></li>
+                    <li><a href="index.html">Back to Main Site</a></li>
+                </ul>
+            </nav>
+            <div id="adminLogoutBtnContainer" style="padding: 10px; text-align: center; display: none;">
+                 <p>Welcome, <span id="adminUsername">Admin</span>!</p>
+                 <button id="adminLogoutBtn" style="background-color: #e74c3c;">Logout</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <!-- Login Section (Initially hidden, JS will manage visibility) -->
+            <section id="admin-login-section" style="display: none;">
+                <h2>Admin Login</h2>
+                <form id="adminLoginForm">
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
+
+            <!-- Dashboard View Section (Initially hidden) -->
+            <section id="dashboard" style="display: none;">
+                <h2>Dashboard</h2>
+                <p>Welcome to the Admin Dashboard! Quick stats will appear here.</p>
+            </section>
+
+            <!-- Manage Email Tips Section -->
+            <section id="manage-email-tips" style="display: none;">
+                <h2>Manage Email Tips</h2>
+                <button id="showAddEmailTipFormBtn">Add New Email Tip</button>
+                
+                <!-- Form for Adding/Editing Email Tip (initially hidden) -->
+                <form id="emailTipForm" style="display:none; margin-top: 20px; padding: 15px; border: 1px solid #ddd;">
+                    <input type="hidden" id="emailTipId" name="emailTipId"> <!-- For storing ID when editing -->
+                    <h3><span id="emailTipFormTitle">Add</span> Email Tip</h3>
+                    <div>
+                        <label for="emailTipTitle">Title:</label>
+                        <input type="text" id="emailTipTitle" name="title" required>
+                    </div>
+                    <div>
+                        <label for="emailTipContent">Content:</label>
+                        <textarea id="emailTipContent" name="content" rows="5" required></textarea>
+                    </div>
+                    <div>
+                        <label for="emailTipCategory">Category:</label>
+                        <input type="text" id="emailTipCategory" name="category" placeholder="e.g., Research Inquiries">
+                    </div>
+                    <button type="submit" id="saveEmailTipBtn">Save Tip</button>
+                    <button type="button" id="cancelEmailTipEditBtn" style="background-color: #777;">Cancel</button>
+                </form>
+                
+                <ul id="emailTipsList" style="margin-top: 20px;"></ul>
+            </section>
+
+            <!-- Manage SOP Tips Section -->
+            <section id="manage-sop-tips" style="display: none;">
+                <h2>Manage SOP Tips</h2>
+                <button id="showAddSopTipFormBtn">Add New SOP Tip</button>
+                
+                <!-- Form for Adding/Editing SOP Tip (initially hidden) -->
+                <form id="sopTipForm" style="display:none; margin-top: 20px; padding: 15px; border: 1px solid #ddd;">
+                    <input type="hidden" id="sopTipId" name="sopTipId"> <!-- For storing ID when editing -->
+                    <h3><span id="sopTipFormTitle">Add</span> SOP Tip</h3>
+                    <div>
+                        <label for="sopTipTitle">Title:</label>
+                        <input type="text" id="sopTipTitle" name="title" required>
+                    </div>
+                    <div>
+                        <label for="sopTipContent">Content:</label>
+                        <textarea id="sopTipContent" name="content" rows="5" required></textarea>
+                    </div>
+                    <div>
+                        <label for="sopTipCategory">Category:</label>
+                        <input type="text" id="sopTipCategory" name="category" placeholder="e.g., Internship Applications">
+                    </div>
+                    <button type="submit" id="saveSopTipBtn">Save Tip</button>
+                    <button type="button" id="cancelSopTipEditBtn" style="background-color: #777;">Cancel</button>
+                </form>
+                
+                <ul id="sopTipsList" style="margin-top: 20px;"></ul>
+            </section>
+
+            <!-- View/Export Student Queries Section (Initially hidden) -->
+            <section id="view-queries" style="display: none;">
+                <h2>View/Export Student Queries</h2>
+                <p>Submitted student questions will be displayed here.</p>
+                <button>Export Queries to CSV</button>
+            </section>
+
+            <!-- Update Website Info Section (Initially hidden) -->
+            <section id="update-website-info" style="display: none;">
+                <h2>Update Website Info</h2>
+                <form id="websiteInfoForm">
+                    <div>
+                        <label for="about-website-content">About Website Content:</label>
+                        <textarea id="about-website-content" name="about-website-content" rows="5"></textarea>
+                    </div>
+                    <div>
+                        <label for="admin-name-siteinfo">Admin Name (for About Us):</label>
+                        <input type="text" id="admin-name-siteinfo" name="admin-name-siteinfo">
+                    </div>
+                    <button type="submit">Save Website Info</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="js/admin_app.js"></script>
+</body>
+</html>
