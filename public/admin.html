@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Beginner's Guide</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+
+    <main>
+        <section id="login-section">
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section id="dashboard-section" style="display:none;">
+            <h2>Admin Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="#tips-management">Manage Tips</a></li>
+                    <li><a href="#queries-management">Manage Queries</a></li>
+                    <li><a href="#settings-management">Manage Settings</a></li>
+                </ul>
+            </nav>
+            <div id="admin-content">
+                <!-- Content for different admin sections will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer id="admin-footer">
+        <p>&copy; 2024 Beginner's Guide Admin</p>
+    </footer>
+
+    <script src="js/admin.js" defer></script>
+</body>
+</html>

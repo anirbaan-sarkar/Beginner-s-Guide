@@ -1,0 +1,448 @@
+/* Main styles for public pages */
+
+:root {
+    --primary-color: #007bff; /* A modern blue */
+    --secondary-color: #28a745; /* A biotech green */
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+    --text-color: #212529;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: #fff; /* Cleaner white background */
+}
+
+header {
+    background: var(--dark-gray);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 { /* Assuming a main site title in header, if any */
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main {
+    /* padding: 20px; */ /* Removed padding to allow full-width sections if needed */
+    max-width: 1200px; /* Allowing wider content for modern screens */
+    margin: 0 auto; /* Centering main content block */
+    /* background: #fff; */ /* Sections will define their own backgrounds */
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */ /* Removed shadow from main for cleaner look */
+}
+
+section {
+    padding: 40px 20px; /* Standardized padding */
+    margin-bottom: 0; /* Removing margin, borders will separate */
+    border-bottom: 1px solid #e9ecef; /* Subtle border for separation */
+}
+
+section:last-of-type { /* Changed from :last-child to :last-of-type for more robustness */
+    border-bottom: none;
+}
+
+h1, h2, h3 {
+    color: var(--dark-gray);
+    margin-top: 0;
+    margin-bottom: 0.75em; /* Consistent bottom margin for headings */
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem; /* Consistent paragraph bottom margin */
+    font-size: 1.05rem; /* Slightly larger base font size for readability */
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Gradient background */
+    color: white;
+    text-align: center;
+    padding: 80px 20px; /* More padding for impact */
+}
+
+#hero h1 {
+    color: white;
+    font-size: 3rem; /* Larger tagline */
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+#hero p {
+    font-size: 1.25rem; /* Larger subtitle */
+    margin-bottom: 1.5em;
+    max-width: 700px; /* Constrain subtitle width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons button {
+    background-color: #fff; /* White buttons with colored text */
+    color: var(--primary-color);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Rounded buttons */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cta-buttons button:hover {
+    background-color: var(--light-gray); /* Slight change on hover */
+    transform: translateY(-2px);
+}
+
+#cta-explore-tips {
+    /* Specific styles if needed */
+}
+
+#cta-ask-question {
+    background-color: var(--secondary-color); /* Different color for secondary CTA */
+    color: white;
+}
+#cta-ask-question:hover {
+    background-color: #1e7e34; /* Darker green on hover */
+}
+
+
+/* About Sections (applies to #about-website, #about-us) */
+#about-website, #about-us, #email-tips, #sop-guidance, #query-form {
+    padding: 60px 20px; /* Increased padding */
+}
+
+#about-website {
+    background-color: var(--light-gray); /* Alternate background color */
+}
+
+#about-website h2, #about-us h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 2.2rem;
+}
+
+#about-website p, #about-us p {
+    max-width: 800px; /* Constrain paragraph width for readability */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Center align text in these sections */
+}
+
+#email-tips h2, #sop-guidance h2, #query-form h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 2.2rem;
+}
+
+
+#about-us strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+#admin-bio {
+    font-style: italic;
+    color: #555;
+}
+
+/* Query Form Section */
+#query-form {
+    background-color: #fff; /* White background for this section, or var(--light-gray) if preferred */
+}
+
+#contact-form {
+    max-width: 700px; /* Max width for the form */
+    margin: 0 auto; /* Center the form */
+    background-color: var(--light-gray); /* Light background for the form itself */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+#contact-form .form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600; /* Bolder labels */
+    color: var(--dark-gray);
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%; /* Full width within the form group */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Standard border */
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#contact-form input[type="text"]:focus,
+#contact-form input[type="email"]:focus,
+#contact-form textarea:focus {
+    border-color: var(--primary-color); /* Highlight focus with primary color */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25); /* Subtle glow effect */
+    outline: none; /* Remove default outline */
+}
+
+#contact-form textarea {
+    resize: vertical; /* Allow vertical resize, disable horizontal */
+    min-height: 120px; /* Minimum height for textarea */
+}
+
+#contact-form button[type="submit"] {
+    display: block; /* Make button block to center it or control width */
+    width: 100%; /* Full width button */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem; /* Slightly larger font for submit button */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Email Tips Section - Card Layout */
+.tips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center cards if they don't fill the row */
+}
+
+.tip-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 40px); /* Approx 3 cards per row, accounting for gap and padding */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.tip-card .tip-category {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    align-self: flex-start; /* Align category badge to the start */
+}
+
+.tip-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+}
+
+.tip-card .preview-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1; /* Makes text take available space, pushing button down */
+    margin-bottom: 15px;
+}
+
+.tip-card .read-more {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align button to the start */
+}
+
+.tip-card .read-more:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+/* SOP Guidance Section - Structured Guide */
+#sop-guidance {
+    background-color: var(--light-gray); /* Alternate background */
+}
+
+.guides-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Space between guide articles */
+}
+
+.sop-guide {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    transition: box-shadow 0.3s ease;
+}
+
+.sop-guide:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+}
+
+.sop-guide .guide-category {
+    display: inline-block;
+    background-color: var(--primary-color); /* Different color for SOP categories */
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.sop-guide h4 { /* Using H4 for SOP guide titles */
+    font-size: 1.4rem;
+    margin-bottom: 0.5em;
+    color: var(--secondary-color); /* Green for SOP titles */
+}
+
+.sop-guide p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.sop-guide .read-more {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.sop-guide .read-more:hover {
+    background-color: #1e7e34; /* Darker green */
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px 20px; /* Increased padding */
+    background: var(--dark-gray);
+    color: #fff;
+    margin-top: 0; /* Remove margin as sections go full width */
+}
+
+/* Basic form styling (can be enhanced later) - This generic one might be overridden or removed if #contact-form is specific enough */
+/* form div { ... } */
+/* label { ... } */
+/* input[type="text"], input[type="email"], input[type="password"], textarea { ... } */
+/* button[type="submit"] { ... } */
+/* button[type="submit"]:hover { ... } */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1.1rem;
+    }
+    .cta-buttons button {
+        margin-bottom: 10px;
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .tip-card {
+        width: calc(50% - 30px); /* 2 cards per row on tablets */
+    }
+}
+
+@media (max-width: 600px) { /* Adjusted breakpoint for single column cards */
+    .tip-card {
+        width: calc(100% - 20px); /* 1 card per row on smaller mobile */
+        margin-left: auto;
+        margin-right: auto;
+    }
+     #hero h1 {
+        font-size: 2rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    section {
+        padding: 30px 15px;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    #email-tips h2, #sop-guidance h2, #query-form h2 {
+        font-size: 1.8rem;
+    }
+    .tip-card h3 { font-size: 1.2rem; }
+    .sop-guide h4 { font-size: 1.3rem; }
+    #contact-form {
+        padding: 20px;
+    }
+}
